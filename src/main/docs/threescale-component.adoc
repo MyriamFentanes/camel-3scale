@@ -258,3 +258,35 @@ in Camel along with the appropriate Headers.
 
 
 
+
+[[ThreeScale-ApplyingReportingonaCamelRoute]]
+Applying Reporting  on a Camel Route
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The ThreeScaleReportingComponent tests and permits incoming message exchanges utilizing  the
+component  to proceed further while sending usage metrics to the 3Scale API manager.
+
+[source,java]
+---------------------------------------------------------------------------------------
+        protected RouteBuilder createRouteBuilder() throws Exception {
+                return new RouteBuilder() {
+                        @Override
+                        public void configure() throws Exception {
+                                from("direct:start").to("threescale-report://");
+                        }
+                };
+        }
+---------------------------------------------------------------------------------------
+
+To configure the metrics you want to report back to 3Scale component, you need to configure the
+parameters map on the definition of the component.
+
+[source,java]
+---------------------------------------------------------------------------------------
+
+//TODO
+put the example on how to configure the component
+
+
+---------------------------------------------------------------------------------------
+
